@@ -86,3 +86,7 @@ print(f'{dpto_ciudades}')
 # Punto 18
 numero_personas = data.groupby(['Nombre departamento', 'Nombre municipio','Sexo']).size().sort_values(ascending=False)
 print(f' {numero_personas}')
+
+# Punto 19
+promedio = data.groupby( ['Nombre departamento', 'Nombre municipio', 'Sexo']).Edad.mean()
+print(f'{promedio}')
