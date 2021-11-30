@@ -191,3 +191,7 @@ data.groupby(['Ubicación del caso']).size().sort_values(ascending = False).plot
 # Punto 33
 graf_sexo = data['Sexo'].value_counts().plot.bar()
 print('\nGrafico de barras por sexo en Colombia')
+
+# Punto 34
+graf_tip_contag = data['Tipo de contagio'].value_counts().plot.bar()
+print('\nGrafico de barras por tipo de contagio en Colombia')
