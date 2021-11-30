@@ -21,3 +21,9 @@ print(f'EL numero de municipios afectado es: {municipios}')
 # Punto 3
 municipios_afectados = data.groupby('Nombre municipio').size().sort_values(ascending=False)
 print(f'\nMunicipios afectados: {municipios_afectados}')
+
+# Punto 4
+data['Ubicación del caso'].replace('Casa', 'CASA', inplace=True)
+data['Ubicación del caso'].replace('casa', 'CASA', inplace=True) 
+atencion_en_casa = len(data[data['Ubicación del caso'] == 'CASA'])
+print(f'El numeroo de personas que se encuentran en atención en casa: {atencion_en_casa}')
