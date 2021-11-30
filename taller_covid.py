@@ -90,3 +90,7 @@ print(f' {numero_personas}')
 # Punto 19
 promedio = data.groupby( ['Nombre departamento', 'Nombre municipio', 'Sexo']).Edad.mean()
 print(f'{promedio}')
+
+# Punto 20
+procedencia = data['Nombre del país'].value_counts()
+print(f'{procedencia}')
