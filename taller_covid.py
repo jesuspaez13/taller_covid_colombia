@@ -184,3 +184,6 @@ print(f'{fallecidos}')
 # Punto 31
 porcentaje = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
 print(porcentaje)
+
+# Punto 32
+data.groupby(['Ubicación del caso']).size().sort_values(ascending = False).plot(kind='bar')
