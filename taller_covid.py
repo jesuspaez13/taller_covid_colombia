@@ -187,3 +187,7 @@ print(porcentaje)
 
 # Punto 32
 data.groupby(['Ubicación del caso']).size().sort_values(ascending = False).plot(kind='bar')
+
+# Punto 33
+graf_sexo = data['Sexo'].value_counts().plot.bar()
+print('\nGrafico de barras por sexo en Colombia')
