@@ -180,3 +180,7 @@ plt.show(curv_recu_munic)
 # Punto 30
 fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Edad').size().sort_values(ascending = False)
 print(f'{fallecidos}')
+
+# Punto 31
+porcentaje = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
+print(porcentaje)
