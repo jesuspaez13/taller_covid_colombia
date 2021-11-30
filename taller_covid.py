@@ -64,3 +64,7 @@ print(f'\n{depar_falle}')
 depar_recup = data[data['Recuperado'] == 'Recuperado'].groupby(
  'Nombre departamento').size().sort_values(ascending=False).head(10)
 print(f'\n{depar_recup}')
+
+# Punto 14
+mas_contagiados = data.groupby('Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f' {mas_contagiados}')
