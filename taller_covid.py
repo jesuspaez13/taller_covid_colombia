@@ -46,3 +46,7 @@ print(f'EL numero de municipios afectado es de: {departamentos_afectados}')
 
 # Punto 9
 data.groupby('Nombre departamento').size()
+
+# Punto 10
+tipo_de_atencion = data.groupby('Ubicación del caso').size().sort_values(ascending=False)
+print(f'{tipo_de_atencion}')
