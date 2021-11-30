@@ -73,3 +73,8 @@ print(f' {mas_contagiados}')
 muni_falle = data[data['Estado'] == 'Fallecido'].groupby(
     'Nombre municipio').size().sort_values(ascending=False).head(10)
 print(f'\n{muni_falle}')
+
+# Punto 16
+muni_recup = data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f'\n{muni_recup}')
