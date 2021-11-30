@@ -195,3 +195,11 @@ print('\nGrafico de barras por sexo en Colombia')
 # Punto 34
 graf_tip_contag = data['Tipo de contagio'].value_counts().plot.bar()
 print('\nGrafico de barras por tipo de contagio en Colombia')
+
+# Punto 35
+data.groupby('Fecha de diagnóstico').size().plot(kind = 'bar')
+Fallecidos = data[data['Ubicación del caso'] == 'Fallecido']
+Fallecidos.groupby('Fecha de diagnóstico').size().plot(kind = 'bar')
+Recuperado = data[data['Recuperado'] == 'Recuperado']
+Recuperado.groupby('Fecha de diagnóstico').size().plot(kind = 'bar')
+plt.legend(["Recuperados", "Fallecidos", "Contagiados"])
