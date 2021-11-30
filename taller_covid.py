@@ -78,3 +78,7 @@ print(f'\n{muni_falle}')
 muni_recup = data[data['Recuperado'] == 'Recuperado'].groupby(
     'Nombre municipio').size().sort_values(ascending=False).head(10)
 print(f'\n{muni_recup}')
+
+# Punto 17
+dpto_ciudades = data.groupby(['Nombre departamento', 'Nombre municipio']).size().sort_values(ascending=False)
+print(f'{dpto_ciudades}')
