@@ -6,6 +6,8 @@ Created on Mon Nov 29 21:30:50 2021
 """
 
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
 url = 'covid_22_noviembre.csv'
 data = pd.read_csv(url)
@@ -131,3 +133,17 @@ data['Sexo'].replace('f', 'F', inplace=True)
 data['Sexo'].replace('m', 'M', inplace=True)
 data['Estado'].replace('LEVE', 'Leve', inplace=True)
 data['Estado'].replace('leve', 'Leve', inplace=True)
+
+# Punto 28
+curv_contg_depar = data.groupby('Nombre departamento').size(
+).sort_values(ascending=False).head(10).plot(figsize=(15, 4))
+print('\nCurva de los 10 departamentos con mas contagios')
+plt.show(curv_contg_depar)
+
+curv_falle_depar = data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
+print('\nCurva de los 10 departamentos con mas personas fallecidas')
+plt.show(curv_falle_depar)
+
+curv_recu_depar = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
+print('\nCurva de los 10 departamentos con mas personas recuperadas')
+plt.show(curv_recu_depar)
