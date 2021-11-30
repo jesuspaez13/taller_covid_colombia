@@ -54,3 +54,8 @@ print(f'{tipo_de_atencion}')
 # Punto 11
 orden_departamento= data.groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
 print(f'Los 10 departamentos con mas casos de contagiados son: {orden_departamento}')
+
+# Punto 12
+depar_falle = data[data['Estado'] == 'Fallecido'].groupby(
+ 'Nombre departamento').size().sort_values(ascending=False).head(10)
+print(f'\n{depar_falle}')
