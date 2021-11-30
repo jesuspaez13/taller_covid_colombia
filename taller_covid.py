@@ -35,3 +35,7 @@ print(f'El total de  personas recuperada es: {personas_recuperadas}')
 # Punto 6
 personas_fallecidas = data[data['Estado'] == 'Fallecido'].shape[0]
 print(f'El total de personas fallecidas en Colombia es de: {personas_fallecidas}')
+
+# Punto 7
+tipo_de_caso_importado = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
+print(f'{tipo_de_caso_importado}')
