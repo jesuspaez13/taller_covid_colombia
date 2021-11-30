@@ -27,3 +27,7 @@ data['Ubicación del caso'].replace('Casa', 'CASA', inplace=True)
 data['Ubicación del caso'].replace('casa', 'CASA', inplace=True) 
 atencion_en_casa = len(data[data['Ubicación del caso'] == 'CASA'])
 print(f'El numeroo de personas que se encuentran en atención en casa: {atencion_en_casa}')
+
+# Punto 5
+personas_recuperadas = data[data['Recuperado'] == 'Recuperado'].shape[0]
+print(f'El total de  personas recuperada es: {personas_recuperadas}') 
