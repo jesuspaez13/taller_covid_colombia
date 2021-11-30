@@ -134,6 +134,21 @@ data['Sexo'].replace('m', 'M', inplace=True)
 data['Estado'].replace('LEVE', 'Leve', inplace=True)
 data['Estado'].replace('leve', 'Leve', inplace=True)
 
+contg = data.groupby('Fecha de diagnóstico').size(
+).sort_values().plot(figsize=(15, 4))
+print('\nCurva de Contagios')
+plt.show(contg)
+
+falle = data[data['Recuperado'] == 'fallecido'].groupby(
+    'Fecha de diagnóstico').size().sort_values().plot(figsize=(15, 4))
+print('\nCurva de Fallecidos')
+plt.show(falle)
+
+recup = data[data['Recuperado'] == 'Recuperado'].groupby(
+    'Fecha de diagnóstico').size().sort_values().plot(figsize=(15, 4))
+print('\nCurva de Recuperados')
+plt.show(recup)
+
 # Punto 28
 curv_contg_depar = data.groupby('Nombre departamento').size(
 ).sort_values(ascending=False).head(10).plot(figsize=(15, 4))
@@ -147,3 +162,17 @@ plt.show(curv_falle_depar)
 curv_recu_depar = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
 print('\nCurva de los 10 departamentos con mas personas recuperadas')
 plt.show(curv_recu_depar)
+
+# Punto 29
+curv_contg_munic = data.groupby('Nombre municipio').size(
+).sort_values(ascending=False).head(10).plot(figsize=(15, 4))
+print('\nCurva de los 10 municipios con mas contagios')
+plt.show(curv_contg_munic)
+
+curv_falle_munic = data[data['Recuperado'] == 'fallecido'].groupby('Nombre municipio').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
+print('\nCurva de los 10 municipios con mas personas fallecidas')
+plt.show(curv_falle_munic)
+
+curv_recu_munic = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre municipio').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
+print('\nCurva de los 10 municipios con mas personas recuperadas')
+plt.show(curv_recu_munic)
