@@ -39,3 +39,7 @@ print(f'El total de personas fallecidas en Colombia es de: {personas_fallecidas}
 # Punto 7
 tipo_de_caso_importado = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
 print(f'{tipo_de_caso_importado}')
+
+# Punto 8
+departamentos_afectados = len(data.groupby('Nombre departamento').size())
+print(f'EL numero de municipios afectado es de: {departamentos_afectados}')
