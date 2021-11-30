@@ -125,3 +125,9 @@ print(f'\n{atencion}')
 # Punto 26
 prom_edad_sexo = data.groupby(['Nombre municipio', 'Sexo']).Edad.mean()
 print(f'\n{prom_edad_sexo}')
+
+# Punto 27
+data['Sexo'].replace('f', 'F', inplace=True)
+data['Sexo'].replace('m', 'M', inplace=True)
+data['Estado'].replace('LEVE', 'Leve', inplace=True)
+data['Estado'].replace('leve', 'Leve', inplace=True)
