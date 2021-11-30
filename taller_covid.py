@@ -121,3 +121,7 @@ print(f'L tasa de recuperación por municipio es: {recuperacion_ciudad}')
 # Punto 25
 atencion = data.groupby(['Nombre municipio', 'Ubicación del caso']).size()
 print(f'\n{atencion}')
+
+# Punto 26
+prom_edad_sexo = data.groupby(['Nombre municipio', 'Sexo']).Edad.mean()
+print(f'\n{prom_edad_sexo}')
