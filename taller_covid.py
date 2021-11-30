@@ -43,3 +43,6 @@ print(f'{tipo_de_caso_importado}')
 # Punto 8
 departamentos_afectados = len(data.groupby('Nombre departamento').size())
 print(f'EL numero de municipios afectado es de: {departamentos_afectados}')
+
+# Punto 9
+data.groupby('Nombre departamento').size()
