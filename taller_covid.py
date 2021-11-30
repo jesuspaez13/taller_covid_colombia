@@ -94,3 +94,8 @@ print(f'{promedio}')
 # Punto 20
 procedencia = data['Nombre del país'].value_counts()
 print(f'{procedencia}')
+
+# Punto 21
+fech_contagio = data.groupby(
+    ['Fecha de diagnóstico']).size().sort_values(ascending=False)
+print(f'\n{fech_contagio}')
