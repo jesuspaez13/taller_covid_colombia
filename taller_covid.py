@@ -176,3 +176,7 @@ plt.show(curv_falle_munic)
 curv_recu_munic = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre municipio').size().sort_values(ascending=False).head(10).plot(figsize=(15, 4))
 print('\nCurva de los 10 municipios con mas personas recuperadas')
 plt.show(curv_recu_munic)
+
+# Punto 30
+fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Edad').size().sort_values(ascending = False)
+print(f'{fallecidos}')
