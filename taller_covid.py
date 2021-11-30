@@ -82,3 +82,7 @@ print(f'\n{muni_recup}')
 # Punto 17
 dpto_ciudades = data.groupby(['Nombre departamento', 'Nombre municipio']).size().sort_values(ascending=False)
 print(f'{dpto_ciudades}')
+
+# Punto 18
+numero_personas = data.groupby(['Nombre departamento', 'Nombre municipio','Sexo']).size().sort_values(ascending=False)
+print(f' {numero_personas}')
