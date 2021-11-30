@@ -99,3 +99,9 @@ print(f'{procedencia}')
 fech_contagio = data.groupby(
     ['Fecha de diagnóstico']).size().sort_values(ascending=False)
 print(f'\n{fech_contagio}')
+
+# Punto 22
+mortalidad = (len(data[data['Estado'] == 'Fallecido']) / len(data)) * 100
+recuperacion = (len(data[data['Recuperado'] == 'Recuperado']) / len(data)) * 100
+print('\nTasa de mortalidad: ', "{:.2f}".format(mortalidad))
+print('\nTasa de recuperacion: ', "{:.2f}".format(recuperacion))
